@@ -40,7 +40,7 @@
         <section class="main-section-top">
             <div class="container">
                 <h1 class="title-hero">Effective Solutions for Your Business</h1>
-                <button type="button" class="buto-main">Order Service</button>
+                <button type="button" class="buto-main" data-modal-open>Order Service</button>
             </div>
         </section>
         <!--OUR METHODS-->
@@ -358,7 +358,7 @@
                     <li class="team-li">
                         <a class="ftr-a" href="">
                             <svg class="social-icon-ftr">
-                                <use href="./images/symbol-defs.svg#linkedin    "></use>
+                                <use href="./images/symbol-defs.svg#linkedin"></use>
                             </svg>
                         </a>
                     </li>
@@ -366,6 +366,16 @@
             </div>
         </div>
     </footer>
-    <div class="backdrop"></div>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <p></p>
+            <button type="button" class="modal-button" data-modal-close>
+                <svg>
+                    <use href="./images/symbol-defs.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

@@ -107,17 +107,17 @@ img {
 }
 
 .loga {
-    font-family: 'Raleway'; sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: #4D5AE5;
-    text-decoration: 
+    text-decoration: none;
 }
 .logb {
-    font-family: 'Raleway'; sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-size: 18px;
     line-height: 1.3;  
@@ -127,7 +127,7 @@ img {
 }
 
 .logbf {
-    font-family: 'Raleway'; sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 800;
     font-size: 18px;
     line-height: 1.1;
@@ -162,13 +162,38 @@ img {
 }
 
 .link-scnd {
+    position: relative;
     font-weight: 700;
     color: #2E2F42;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    transition: color var(--trasition);
 }
+
+.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary-brand);
+    border-bottom: 1px solid #404BBF;
+    border-radius: 2px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+    transition: opacity var(--trasition);
+}
+
+/* .current:active::after {
+    opacity: 1;
+} */
 
 .link-scnd:hover,
 .link-scnd:focus {
     color: var(--primary-brand);
+    cursor: pointer;
 }
 
 /* HEADER CONTACTS UL ===========================================*/
@@ -181,6 +206,7 @@ img {
 .ul-contacts- {
    color: var(--text);
    align-items: center;
+   transition: var(--trasition);
 }
 
 .ul-contacts-:hover,
@@ -210,6 +236,7 @@ img {
     font-size: 16px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    transition: var(--trasition);
 
     margin: 0;
     padding: 16px 32px;
@@ -223,6 +250,7 @@ img {
 .buto-main:focus {
     color: #ffffff;
     background-color: #404BBF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -238,6 +266,7 @@ img {
     background-color: var(--accent);
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    transition: var(--trasition);
 }
 .buto:focus,
 .buto:hover {
@@ -334,6 +363,7 @@ img {
     height: 40px;
     border-radius: 50%;
     background-color: var(--primary-brand);
+    transition: var(--trasition);
 }
 
 .team-a:focus,
@@ -348,15 +378,11 @@ img {
 
 .customers-ul {
     display: flex;
-    column-gap: 24px    ;
+    column-gap: 24px;
 }
 
 .customers-li {
-    /* width: 168px;
-    height: 88px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid #8E8F99; */
+
 }
 .customers-icon {
     width: 104px;
@@ -369,6 +395,7 @@ img {
     align-items: center;
     width: 168px;
     height: 88px;
+    transition: var(--trasition);
     border-radius: 4px;
     border: 1px solid currentColor;
     color: #8e8f99;
@@ -424,6 +451,7 @@ img {
 .prtf-a {
     display: block;
     text-decoration: none;
+    transition: var(--trasition);
 }
 
 
@@ -452,7 +480,10 @@ img {
     overflow: hidden;
 }
 
-
+.prtf-a:focus , 
+.prtf-a:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 
 .prtf-a:focus .overlay,
 .prtf-a:hover .overlay {
@@ -502,6 +533,7 @@ img {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--trasition);
 }
 
 .ftr-a:focus,
@@ -515,6 +547,43 @@ img {
 }
 .position-footer {
     margin-right: 120px;
+}
+
+/* M  O  D  A  L     W  I N  D  O  W */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-height: 570px;
+    min-width: 400px;
+    background-color: #FFFFFF;
+}
+
+.modal-button {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 32px;
+    right: 32px;
+    cursor: pointer;
 }
 /* visually */
 .visually-hidden {
